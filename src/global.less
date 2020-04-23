@@ -1,0 +1,47 @@
+@import "./vars.less";
+.box {
+  width: 100%;
+  min-width: 1140px;
+  background: #F4F4F5;
+  max-width: 1920px;
+  margin: auto;
+  padding: 30px 0 30px;
+}
+.container{
+  width: 1140px;
+  margin: 0 auto;
+  height: 100%;
+}
+//过度效果
+.timeOut.active.left {
+  opacity: 1;
+  transform: scale(1);
+}
+.timeOut.left {
+  opacity: 0;
+  transform: translate(-100px,0);
+}
+.timeOut {
+  transition: 1s;
+}
+.el-button--primary, .el-radio__input.is-checked .el-radio__inner{
+  background-color: @color;
+  border-color: @color;
+}
+.el-tabs__item.is-active, .el-radio__input.is-checked+.el-radio__label{
+  color: @color;
+}
+.el-tabs__active-bar{
+  background-color: @color;
+}
+.el-card__body {
+  padding: 40px 20px;
+  .el-tabs__item{
+    font-size: 16px;
+    padding: 0 40px;
+  }
+}
+.el-tabs__header {
+  margin: 0 0 25px 25px;
+  width: 88%;
+}
