@@ -2,10 +2,13 @@
   <el-container class="height">
     <slider-menu :menuData="menuData" a="1"/>
     <el-container>
-      <el-header class="header-contaner"><Header /></el-header>
+      <el-header class="header-contaner">
+        <Header/>
+      </el-header>
       <el-main>
         <Breadcrumb :menuData="menuData"/>
-        <router-view /></el-main>
+        <router-view/>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -19,7 +22,7 @@
   let menuData = []
   export default {
     name: "app",
-    data () {
+    data() {
       return {
         menuData: menuData,
       }
@@ -29,21 +32,22 @@
       Header,
       Breadcrumb
     },
-    beforeCreate () {
+    beforeCreate() {
       menuData = this.$router.options.routes
     },
-    mounted(){
+    mounted() {
     },
-    updated(){
+    updated() {
       window.scrollTo(0, 0); //设置y轴滚动一百像素
     }
 
   };
 </script>
 <style lang="less" scoped>
-  .height{
+  .height {
     min-height: 100vh;
   }
+
   .el-header, .el-footer {
     text-align: center;
     display: flex;
@@ -52,6 +56,7 @@
     /*line-height: 60px;*/
     background-color: rgb(84, 92, 100);
   }
+
   .el-main {
     background-color: #E9EEF3;
     color: #333;
