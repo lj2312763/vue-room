@@ -48,26 +48,17 @@
     min-height: 100vh;
   }
 
-  .el-header, .el-footer {
+  .el-header {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /*line-height: 60px;*/
-    background-color: rgb(84, 92, 100);
+    background-color: #242F42;
   }
 
   .el-main {
-    background-color: #E9EEF3;
+    background-color: #F9F9F9;
     color: #333;
     text-align: center;
-  }
-
-  body > .el-container {
-    /*margin-bottom: 40px;*/
-  }
-
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
   }
 </style>

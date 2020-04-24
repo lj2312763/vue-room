@@ -6,6 +6,7 @@ module.exports = {
     }
   },
   devServer: {
+    port: 8089,
     proxy: {
       '/api': {
         target: 'http://jjh.dazyun.cn/',

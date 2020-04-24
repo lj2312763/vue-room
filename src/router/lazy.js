@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Overview from '../pages/overview'
+import hoseInfo from '../pages/hoseInfo'
+import hoseMange from '../pages/hoseMange'
+import staff from '../pages/staff'
+import repertory from '../pages/repertory'
 
 Vue.use(Router)
 export default new Router({
@@ -9,38 +13,38 @@ export default new Router({
       path: '/',
       name: '数据概览',
       component: Overview,
-      // redirect: '/login',
+      // redirect: '/',
       icon: 'none',
       invisible: true
     },
     {
-      path: '/a',
-      name: '库存管理',
-      component: Overview,
-      // redirect: '/login',
-      icon: 'none',
-      invisible: true
-    },
-    {
-      path: '/b',
-      name: '员⼯总览',
-      component: Overview,
-      // redirect: '/login',
-      icon: 'none',
-      invisible: true
-    },
-    {
-      path: '/',
-      name: '房态管理',
-      component: Overview,
-      // redirect: '/login',
-      icon: 'none',
-      invisible: true
-    },
-    {
-      path: '/',
+      path: '/hoseInfo',
       name: '房态信息',
-      component: Overview,
+      component: hoseInfo,
+      icon: 'none',
+      invisible: true
+    },
+    {
+      path: '/hoseMange',
+      name: '房态管理',
+      component: hoseMange,
+      // redirect: '/login',
+      icon: 'none',
+      invisible: true
+    },
+    {
+      path: '/staff',
+      name: '员⼯总览',
+      component: staff,
+      // redirect: '/login',
+      icon: 'none',
+      invisible: true
+    },
+    {
+      path: '/repertory',
+      name: '库存管理',
+      component: repertory,
+      // redirect: '/login',
       icon: 'none',
       invisible: true
     }
