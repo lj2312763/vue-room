@@ -7,7 +7,9 @@
       </el-header>
       <el-main>
         <Breadcrumb :menuData="menuData"/>
-        <router-view/>
+        <div class="main-container">
+          <router-view/>
+        </div>
       </el-main>
     </el-container>
   </el-container>
@@ -60,5 +62,8 @@
     background-color: #F9F9F9;
     color: #333;
     text-align: center;
+    .main-container{
+      padding: 20px 0;
+    }
   }
 </style>
