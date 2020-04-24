@@ -20,6 +20,7 @@
   import SliderMenu from '@/components/common/Menu'
   import Header from '@/components/common/Header'
   import Breadcrumb from '@/components/common/Breadcrumb'
+  import { menus } from '@/router/lazy'
   // import Menu from '@/components/menu/SiderMenu.vue'
   let menuData = []
   export default {
@@ -35,7 +36,8 @@
       Breadcrumb
     },
     beforeCreate() {
-      menuData = this.$router.options.routes
+      // 找出可见的路由
+      menuData = menus
     },
     mounted() {
     },

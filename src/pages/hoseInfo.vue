@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-view/>
     <div class="search-bar">
       <Search :lefts="lefts" :rights="rights" @onSubmitFunc="onSearch"/>
     </div>
@@ -22,7 +23,7 @@
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item :disabled="item.status === status2 || item.nowDwell >= item.max">办理入住</el-dropdown-item>
               <el-dropdown-item>入住记录</el-dropdown-item>
-              <el-dropdown-item>房间详情</el-dropdown-item>
+              <el-dropdown-item><router-link to="/hoseInfo/hoseDetail">房间信息</router-link></el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
