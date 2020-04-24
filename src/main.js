@@ -4,6 +4,7 @@ import axios from 'axios'
 import './plugins/element.js'
 import App from './App.vue'
 import './assets/reset.css'
+import './assets/element-ui-cover.less'
 import './global.less'
 
 Vue.config.productionTip = false

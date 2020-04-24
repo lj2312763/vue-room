@@ -12,9 +12,9 @@
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#ffd04b">
+      background-color="#22242F"
+      text-color="#999999"
+      active-text-color="#FFFFFF">
       <router-link :to="item.path" :key="i" v-for="(item, i) in menuData">
         <el-menu-item :index="i">
           <i class="el-icon-setting"></i>
@@ -66,7 +66,7 @@
 
 <style scoped lang="less">
   .el-aside {
-    background-color: rgb(84, 92, 100);
+    background-color: #22242F;
     color: #333;
     text-align: center;
     /*height: 100%;*/
@@ -79,9 +79,16 @@
 
   .logo {
     padding: 20px;
+    font-size: 18px;
+    color: #fff;
     a {
       display: flex;
       align-items: center;
+      color: #fff;
+    }
+    a, h1{
+      color: #fff;
+      font-weight:bold;
     }
     .el-icon-s-grid{
       font-size: 20px;
