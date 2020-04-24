@@ -2,16 +2,15 @@
   <div class="house-detail">
     <DetailFields :fields="fields" :data="data"/>
     <div class="divider"></div>
-    <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
-      <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
-      <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
-      <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+    <el-tabs v-model="activeName">
+      <el-tab-pane label="入住信息" name="checkin"><CheckIn /></el-tab-pane>
+      <el-tab-pane label="配套物品" name="goods">配置管理</el-tab-pane>
     </el-tabs>
   </div>
 </template>
 
 <script>
+  import CheckIn from '@/components/CheckIn'
   import DetailFields from '@/components/common/DetailFields'
   import {UNIT_TYPE, HOUSE_TYPE, HOUSE_STATUS_TYPE} from '@/enum'
 
@@ -39,7 +38,6 @@
       balance: '168.1元',
     })
   }
-  console.log(houseList)
   const index = Math.round(Math.random() * count)
   export default {
     name: "hoseDetail",
@@ -85,11 +83,13 @@
             ]
           }
         ],
-        data: houseList[index]
+        data: houseList[index],
+        activeName: 'checkin'
       }
     },
     components: {
-      DetailFields
+      DetailFields,
+      CheckIn
     }
   }
 </script>
@@ -98,10 +98,6 @@
   .house-detail {
     padding: 35px;
     background: #FFFFFF;
-    .divider {
-      border-bottom: 1px dashed #707070;
-      margin: 20px 0;
-    }
   }
 
 </style>

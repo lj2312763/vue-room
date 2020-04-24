@@ -1,6 +1,6 @@
 <template>
   <div class="detail-fields">
-    <div v-for="(group, i) in fields" :Key="i">
+    <div v-for="(group, i) in fields" :key="i">
       <div class="detail-title">{{ group.name }}</div>
       <div class="detail-group-content" v-if="!Array.isArray(group.children[0])">
         <div v-for="field in group.children" :key="field.key" class="detail-fields-item">

@@ -10,3 +10,11 @@ export const NOWDWELL = { name: '在住', value: '1'}
 export const MAINTENANCE = { name: '维修中', value: '2'}
 export const FREE = { name: '空闲中', value: '3'}
 export const HOUSE_STATUS_TYPE = [NOWDWELL, MAINTENANCE, FREE]
+// 性别类型
+export const MALE = { name: '男', value: 'male'}
+export const WOMAN = { name: '女', value: 'woman'}
+export const GENDER_TYPE = [MALE, WOMAN]
+// 婚否类型
+export const MARRIED = { name: '已婚', value: '1'}
+export const DISCOVERTURE = { name: '未婚', value: '0'}
+export const MARITAL = [MARRIED, DISCOVERTURE]

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-view/>
+    <CheckInDialog :visible="visible" @submit="onCheckIn" @onClose="openDialog(false)"/>
     <div class="search-bar">
       <Search :lefts="lefts" :rights="rights" @onSubmitFunc="onSearch"/>
     </div>
@@ -21,7 +21,7 @@
               <div class="dot"></div>
             </div>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item :disabled="item.status === status2 || item.nowDwell >= item.max">办理入住</el-dropdown-item>
+              <el-dropdown-item :disabled="item.status === status2 || item.nowDwell >= item.max" @click.native="openDialog(true)">办理入住</el-dropdown-item>
               <el-dropdown-item>入住记录</el-dropdown-item>
               <el-dropdown-item><router-link to="/hoseInfo/hoseDetail">房间信息</router-link></el-dropdown-item>
             </el-dropdown-menu>
@@ -35,6 +35,7 @@
 <script>
   import Search from '@/components/common/Search'
   import {DORMITORY_TYPE, UNIT_TYPE, HOUSE_TYPE, HOUSE_STATUS_TYPE, NOWDWELL, FREE, MAINTENANCE} from '@/enum'
+  import CheckInDialog from '@/components/CheckInDialog'
   const houseList = []
   // 生成模拟数据
   for (let i = 0; i < 20; ++i){
@@ -53,12 +54,12 @@
       statusStr: HOUSE_STATUS_TYPE[rodm3].name,
     })
   }
-  console.log(houseList)
   export default {
     name: "hoseInfo",
     data() {
       return {
         houseList,
+        visible: false, // 入住弹窗显示
         lefts: [
           {name: '宿舍筛选', type: 'select', key: 'dormitory', options: DORMITORY_TYPE},
           {name: '单元筛选', type: 'select', key: 'unit', options: UNIT_TYPE},
@@ -72,7 +73,8 @@
       }
     },
     components: {
-      Search
+      Search,
+      CheckInDialog
     },
     computed: {
       // 房屋状态1 在住
@@ -96,6 +98,13 @@
       // 按钮点击事件
       rightClick(values){
         console.log(values)
+      },
+      openDialog(visible){
+        console.log(visible)
+        this.visible = visible
+      },
+      onCheckIn(values){
+        console.log('我要提交的数据', values)
       }
     }
   }
