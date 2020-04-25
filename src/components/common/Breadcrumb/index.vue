@@ -21,7 +21,6 @@
       }
     },
     beforeCreate(){
-      console.log(this.$router.options)
     }
   }
 </script>

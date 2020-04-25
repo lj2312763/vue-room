@@ -5,7 +5,7 @@
       <div class="vertical-line"></div>
     </div>
     <div class="header-user">
-      <el-avatar :size="size" :src="circleUrl"></el-avatar>
+      <el-avatar  :src="circleUrl"></el-avatar>
       <el-dropdown class="header-dropdown">
         <span class="el-dropdown-link">系统管理员<i class="el-icon-arrow-down el-icon--right"></i></span>
         <el-dropdown-menu slot="dropdown">

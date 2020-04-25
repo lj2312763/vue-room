@@ -16,7 +16,7 @@
       text-color="#999999"
       active-text-color="#FFFFFF">
       <router-link :to="item.path" :key="i" v-for="(item, i) in menuData">
-        <el-menu-item :index="i">
+        <el-menu-item >
           <i class="el-icon-setting"></i>
           <span>{{ item.name }}</span>
         </el-menu-item>

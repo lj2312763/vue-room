@@ -17,6 +17,10 @@
             </el-option>
           </el-select>
         </div>
+        <div v-else-if="field.type === 'detail'" class="search-item isDetail">
+          <div class="search-item-label">{{ field.name }}</div>
+          <di>{{ data[field.key]}}</di>
+        </div>
       </div>
       <el-button type="primary" v-if="isSearch" class="submit" @click="onSubmit">查询</el-button>
     </div>
@@ -40,7 +44,7 @@
 
 <script>
   export default {
-    name: "Search",
+    name: "custom-search",
     data() {
       const obj = {}
       // 获取field的key进行双向绑定
@@ -56,6 +60,7 @@
         type: Boolean,
         default: true
       },
+      data: Object,
       lefts: Array,
       onSubmitFunc: Function,
       rights: Array
@@ -65,7 +70,7 @@
       onSubmit() {
         this.$emit('onSubmitFunc', this.searchValues)
       },
-      beforeUpload(file){
+      beforeUpload(file) {
         console.log(file)
       }
     }
@@ -75,6 +80,7 @@
 
 <style scoped lang="less">
   @import '../../vars.less';
+
   .search-container {
     display: flex;
     justify-content: space-between;
@@ -98,10 +104,19 @@
         margin-right: 6px;
       }
     }
+    .search-item.isDetail {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: #333333;
+      .search-item-label{
+        color: #333333;
+      }
+    }
     .search-right {
       display: flex;
       align-items: center;
-      .search-upload{
+      .search-upload {
         height: 40px;
         line-height: 40px;
       }

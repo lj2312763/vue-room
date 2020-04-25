@@ -22,7 +22,7 @@
             </div>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item :disabled="item.status === status2 || item.nowDwell >= item.max" @click.native="openDialog(true)">办理入住</el-dropdown-item>
-              <el-dropdown-item>入住记录</el-dropdown-item>
+              <el-dropdown-item><router-link to="/hoseInfo/checkInRecord">入住记录</router-link></el-dropdown-item>
               <el-dropdown-item><router-link to="/hoseInfo/hoseDetail">房间信息</router-link></el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -111,15 +111,9 @@
 </script>
 
 <style scoped lang="less">
-  .search-bar {
-    background: #fff;
-    height: 60px;
-    line-height: 60px;
-  }
   .house-info-list {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 22px;
     .house-info-item {
       width: 220px;
       height: 99px;

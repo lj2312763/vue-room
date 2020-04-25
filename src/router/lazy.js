@@ -6,6 +6,7 @@ import hoseMange from '../pages/hoseMange'
 import staff from '../pages/staff'
 import repertory from '../pages/repertory'
 import hoseDetail from '../pages/hoseDetail'
+import checkInRecord from '../pages/checkInRecord'
 
 Vue.use(Router)
 export const menus = [
@@ -73,6 +74,13 @@ export default new Router({
       path: '/hoseInfo/hoseDetail',
       name: '房间详情',
       component: hoseDetail,
+      icon: 'none',
+      invisible: false,
+    },
+    {
+      path: '/hoseInfo/checkInRecord',
+      name: '入住记录',
+      component: checkInRecord,
       icon: 'none',
       invisible: false,
     },
